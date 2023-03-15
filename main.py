@@ -1,0 +1,21 @@
+from design import Window,App
+
+if __name__ == "__main__":
+    app = App()
+    w=Window(app,5,5)
+    w.add_label("Цена S0:",0,0)
+    w.add_label("Дивидендная доходность q:",0,1)
+    w.add_label("Цена исполнения K:",0,2)
+    w.add_label("Барьерный уровень H:",0,3)
+    w.add_label("Волатильность сигма:",0,4)
+    w.add_label("Срок исполнения T:",0,5)
+    w.add_label("Процнт r:",0,6)
+    w.input(1,0,'S0')
+    w.input(1,1,"q")
+    w.input(1,2,"K")
+    w.input(1,3,"H")
+    w.input(1,4,"sigma")
+    w.input(1,5,"T")
+    w.input(1,6,"r")
+    w.add_button(0,10,"Calculate",w.calculate,{"S0": w.S0,"q": w.q,"K": w.K,"H": w.H,"sigma": w.sigma,"T": w.T})
+    app.mainloop()
